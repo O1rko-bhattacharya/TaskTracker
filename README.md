@@ -8,3 +8,4 @@ Simple To-do list browser based app using react vitejs which can:-
 5. Deleting current / completed tasks
 
 Formatting done using Tailwind CSS. Icons by:- https://www.svgrepo.com/ , https://lordicon.com/
+ Site link: https://tasktracer-react-tailwind1.netlify.app
