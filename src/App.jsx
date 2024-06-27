@@ -107,7 +107,7 @@ function App() {
                             colors="primary:#ffffff">
                         </lord-icon></button>
         </div>
-          <h1 className="text-lg font-bold p-2"><img src="/src/assets/Todoicon.png" alt="Default" className="w-5 h-5 inline mx-1"></img>Your Todo Tasks:</h1>
+          <h1 className="text-lg font-bold p-2">Your Todo Tasks:</h1>
         
         <div className="todos">
           <ol className="list flex flex-col">
@@ -150,7 +150,7 @@ function App() {
           </ol>
         </div>
         <br></br>
-        <h2 className="text-lg font-bold p-2"><img src="/src/assets/CompletedIcon.png" alt="Default" className="w-5 h-5 inline mx-1"></img>Completed Tasks:</h2>
+        <h2 className="text-lg font-bold p-2">Completed Tasks:</h2>
         <div className="completed">
           <button className="bg-black text-white p-3 py-1 rounded-lg mx-1" onClick={showCompletetasks}>Show Completed Tasks</button>
           <ul className="comlist flex flex-col" ref={comlist}>
