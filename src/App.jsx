@@ -4,6 +4,8 @@ import Navbar from "./components/Navbar"
 import Footer from "./components/Footer"
 import lottie from "lottie-web";
 import { defineElement } from "@lordicon/element";
+import img1 from './assets/CompletedIcon.png';
+import img2 from './assets/Todoicon.png';
 
 // define "lord-icon" custom element with default properties
 defineElement(lottie.loadAnimation);
@@ -95,11 +97,12 @@ function App() {
   };
   return (
     <>
+    <body className="bg-gradient-to-r from-cyan-200 to-cyan-200">
     <Navbar/>
-      <div className="container my-3 rounded-xl bg-yellow-200 mx-auto min-h-[75vh]">
-      <h2 className="text-lg font-bold p-1">Add a Task:</h2>
-        <div className="add-todo my-4 flex flex-row">
-          <input type="text" className= "text-black w-1/2 rounded-lg bg-blue-200 p-3 py-1 text-center" onChange={handleChange} value={todo} placeholder="Enter a task"></input>
+      <div className="container justify-center mx-auto my-3 rounded-xl bg-gradient-to-r from-teal-400 to-yellow-200 w-9/12 min-h-[75vh] ">
+      <h2 className="text-lg font-bold py-1 px-3">ADD A TASK:</h2>
+        <div className="add-todo my-4 flex flex-row ">
+          <input type="text" className= "text-black w-1/2 rounded-lg font-bold bg-gradient-to-r from-blue-200 to-blue-500 px-1 py-1 ms-2 me-0 text-center content-center placeholder-black" onChange={handleChange} value={todo} placeholder="Enter a task"></input>
           <button className="bg-black text-white p-3 py-1 rounded-lg mx-5" onClick={handleAdd}><script src="https://cdn.lordicon.com/lordicon.js"></script>
                         <lord-icon
                             src="https://cdn.lordicon.com/hqymfzvj.json"
@@ -107,24 +110,24 @@ function App() {
                             colors="primary:#ffffff">
                         </lord-icon></button>
         </div>
-          <h1 className="text-lg font-bold p-2">Your Todo Tasks:</h1>
+          <h1 className="text-lg font-bold p-2 ms-0.5 me-0 "><img src={img2} alt="Default" className="w-5 h-5 inline mx-1"></img>YOUR TODO TASKS:</h1>
         
         <div className="todos">
           <ol className="list flex flex-col">
             {todos.map((todo,index)=>
-              <li key={index} className="element flex flex-row py-1">
-                <textarea accessKey={index} id="task-info" value={todo} onChange={handleEdit} className= "text-black text-center w-1/2 rounded-lg bg-red-600">
+              <li key={index} className="element flex flex-row py-1 my-1">
+                <textarea accessKey={index} id="task-info" value={todo} onChange={handleEdit} className= "text-black font-bold text-center w-1/2 ms-2 rounded-lg bg-gradient-to-r from-red-200 to-red-500">
 
                 </textarea>
-                <span className="buttons">
+                <span className="buttons flex mx-2">
                 <button className="bg-black text-white p-3 py-1 rounded-lg mx-1" onClick={()=>taskdone(index)}><script src="https://cdn.lordicon.com/lordicon.js"></script>
                                           <lord-icon
                                               src="https://cdn.lordicon.com/oqdmuxru.json"
                                               trigger="morph"
                                               state="morph-check-in-1"
-                                              colors="primary:#ffffff">
+                                              colors="primary:#a3e635">
                                           </lord-icon></button>
-                <button className="bg-black text-white p-3 py-1 rounded-lg mx-1" onClick={()=>handleDelete(index)}><script src="https://cdn.lordicon.com/lordicon.js"></script>
+                <button className="bg-red-600 text-white p-3 py-1 rounded-lg mx-1" onClick={()=>handleDelete(index)}><script src="https://cdn.lordicon.com/lordicon.js"></script>
                                     <lord-icon
                                         src="https://cdn.lordicon.com/wpyrrmcq.json"
                                         trigger="morph"
@@ -150,19 +153,20 @@ function App() {
           </ol>
         </div>
         <br></br>
-        <h2 className="text-lg font-bold p-2">Completed Tasks:</h2>
+        <h2 className="text-lg font-bold p-2 "><img src={img1}  alt="Default" className="w-5 h-5 inline mx-1"></img>COMPLETED TASKS:</h2>
         <div className="completed">
-          <button className="bg-black text-white p-3 py-1 rounded-lg mx-1" onClick={showCompletetasks}>Show Completed Tasks</button>
-          <ul className="comlist flex flex-col" ref={comlist}>
+          <button className="bg-black text-white p-3 py-1 rounded-lg mx-1 ms-2 me-0" onClick={showCompletetasks}>Hide/Show Completed Tasks</button>
+          <ul className="comlist flex flex-col my-2" ref={comlist}>
             {completed.map((todo,index)=>
               <li key={index} className="element flex flex-row py-1">
-                <p className="bg-green-400 text-black w-1/2 rounded-lg text-center">{todo}</p>
-                <button onClick={()=>removeCompletetasks(index)} className="bg-black text-white p-3 py-1 rounded-lg mx-1"><script src="https://cdn.lordicon.com/lordicon.js"></script>
+                <p className="bg-gradient-to-r from-lime-200 to-lime-500 ms-2 w-1/2 rounded-lg font-bold text-center">{todo}</p>
+                <button onClick={()=>removeCompletetasks(index)} className="bg-red-600 text-black p-3 py-1 rounded-lg mx-1"><script src="https://cdn.lordicon.com/lordicon.js"></script>
                                     <lord-icon
                                         src="https://cdn.lordicon.com/wpyrrmcq.json"
                                         trigger="morph"
                                         state="morph-trash-full"
                                         colors="primary:#ffffff"
+                                        
                                     >
                                     </lord-icon></button>
 
@@ -171,7 +175,9 @@ function App() {
           </ul>
         </div>
       </div>
+      
       <Footer/>
+      </body>
     </>
     
   );
@@ -179,3 +185,4 @@ function App() {
 }
 
 export default App;
+
