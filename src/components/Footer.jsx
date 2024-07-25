@@ -5,7 +5,7 @@ export default function Footer() {
                 <span className="text-sm text-white sm:text-center dark:text-gray-400 hover:underline">© 2024 <a href="https://github.com/O1rko-bhattacharya">TaskTracker™</a>. All Rights Reserved.
                 </span>
                 <span>
-                    <p className="text-white m-2">Icons by <a href="https://www.svgrepo.com/" className="hover:underline text-white">SVGrepo</a>,<a href="https://lordicon.com/"className="hover:underline text-white">Lordicons</a></p>
+                    <p className="text-white m-2">Icons by <a href="https://www.svgrepo.com/" className="hover:underline text-white">SVGrepo</a>,<a href="https://lordicon.com/"className="hover:underline text-white">Lordicons</a>,<a href="https://icons8.com/icons" className="hover:underline text-white">Icons8</a></p>
                 </span>
             </footer>
         </>
